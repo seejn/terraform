@@ -1,0 +1,12 @@
+# Terraform Variables Configuration for Vue.js Deployment
+# Copy this file to terraform.tfvars and customize the values
+
+# Name of your Vue.js project (used in resource naming)
+project_name = "my-vuejs-app"
+
+# Environment (dev, staging, prod)
+environment = "prod"
+
+# Custom domain (optional - leave empty to use CloudFront domain)
+# domain_name = "www.myapp.com"
+domain_name = ""
