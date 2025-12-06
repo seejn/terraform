@@ -1,5 +1,16 @@
 # SageMaker Quick Start - Notebook Instance
 # This creates a SageMaker notebook ready to use
+variable "aws_profile" {
+  description = "AWS profile to use for authentication"
+  type        = string
+  default     = "seejn"  # Change this to your profile name
+}
+
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "ap-south-1"
+}
 
 terraform {
   required_providers {
@@ -11,7 +22,8 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region  = var.aws_region
+  profile = var.aws_profile  # ← This tells Terraform which profile to use
 }
 
 # S3 Bucket for SageMaker data and models
